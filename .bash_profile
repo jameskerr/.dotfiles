@@ -102,3 +102,9 @@ prompt_command() {
 }
 
 PROMPT_COMMAND=prompt_command 
+
+###########################
+# ::: WELCOME MESSAGE ::: #
+###########################
+
+cat .dotfiles/rocket.txt
