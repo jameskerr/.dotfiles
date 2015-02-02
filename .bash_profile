@@ -7,6 +7,7 @@
 #
 #
 #
+alias updot="cd ~/.dotfiles && git pull && cd - && source .bash_profile"
 
 
 #########################
