@@ -36,6 +36,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # needed for rbenv
 # ::: USEFUL FUNCTIONS ::: #
 ############################
 
+# Resource this file
+alias reload!='source ~/.bash_profile'
+
 # Navigating files
 alias ll='ls -laGhp'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
@@ -84,6 +87,9 @@ alias copyssh='cat ~/.ssh/id_rsa.pub | pbcopy'
 # Search the web
 google () { open -a "Google Chrome" "https://google.com/search?q=$*"; }
 
+# Ruby on Rails
+migrate() { bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test; }
+
 
 ######################
 # ::: THE PROMPT ::: #
@@ -109,6 +115,14 @@ prompt_command() {
 
 PROMPT_COMMAND=prompt_command 
 
+############################
+# ::: EXTERNAL SOURCES ::: #
+############################
+
+source ~/.bashrc
+
 ###########################
 # ::: WELCOME MESSAGE ::: #
 ###########################
+
+echo "::: The Shell Welcomes You :::"
