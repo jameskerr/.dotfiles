@@ -29,6 +29,11 @@ GRAY="\[\033[0;37m\]"
 BUNDLE_EDITOR='subl'
 
 
+#################
+# ::: PATHS ::: #
+#################
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # needed for rbenv
+
 ############################
 # ::: USEFUL FUNCTIONS ::: #
 ############################
@@ -45,7 +50,7 @@ ql () { qlmanage -p "$*" >& /dev/null; }
 
 # Modifying files
 alias edit='subl'
-alias mv='mv-iv'
+alias mv='mv -iv'
 alias cp='cp -iv'
 alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 alias mkdir='mkdir -pv' 
