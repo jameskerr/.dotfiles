@@ -10,6 +10,9 @@
 alias updot="cd ~/.dotfiles && git pull && cd - && source .bash_profile"
 
 
+# PATHS FOR HOMEBREW
+PATH="/usr/local/sbin:$PATH"
+
 #########################
 # ::: ENV VARIABLES ::: #
 #########################
@@ -82,6 +85,7 @@ alias g='git status'
 
 # Web Development
 alias serve='php -S localhost:8000'
+alias servers='lsof -Pni4 | grep LISTEN'
 
 # SSH
 alias copyssh='cat ~/.ssh/id_rsa.pub | pbcopy'
@@ -115,7 +119,7 @@ prompt_command() {
 	export PS1="\! \W${BRANCH}${DEFAULT} > "
 }
 
-PROMPT_COMMAND=prompt_command 
+PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND" 
 
 ############################
 # ::: EXTERNAL SOURCES ::: #
