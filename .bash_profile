@@ -45,7 +45,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi # needed for rbenv
 alias reload!='source ~/.bash_profile'
 
 # Navigating files
-alias ll='ls -laGhp'
+alias ll='ls -laGhpo'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 alias f='open -a Finder ./'
 alias ~="cd ~"
@@ -115,8 +115,10 @@ _git_branch_prompt() {
 }
 
 prompt_command() {
-	local BRANCH=`_git_branch_prompt`
-	export PS1="\! \W${BRANCH}${DEFAULT} > "
+    # If you want the git branch thing.  I might want this later.
+	# local BRANCH=`_git_branch_prompt`
+	# export PS1="\W${BRANCH}${DEFAULT}\n> "
+    export PS1="> "
 }
 
 PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND" 
@@ -126,9 +128,3 @@ PROMPT_COMMAND="prompt_command; $PROMPT_COMMAND"
 ############################
 
 source ~/.bashrc
-
-###########################
-# ::: WELCOME MESSAGE ::: #
-###########################
-
-echo "::: The Shell Welcomes You :::"
